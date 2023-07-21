@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Successful</title>
+  <title>Повідомлення про успішну заявку</title>
+  <style>
+    body {
+      font-family: 'Helvetica', Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Тінь змінена на більш виразну */
+      background-color: #fff;
+    }
+
+    h1 {
+      color: #007bff;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .success-icon {
+      font-size: 48px;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-  Ваша заявка була успішно відправлена!
+  <div class="container">
+    <span class="success-icon">&#10003;</span>
+    <h1>Ваша заявка була відправлена успішно!</h1>
+    <p>Дякуємо за вашу заявку. Ми зв'яжемося з вами найближчим часом.</p>
+  </div>
 </body>
 </html>
