@@ -15,19 +15,24 @@
       height: 100vh;
     }
 
-    .form-container {
-      max-width: 400px;
-      padding: 30px;
+    .form-wrapper {
+      max-width: 600px;
+      background-color: #ffffff;
+      padding: 40px;
       border-radius: 10px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      background-color: #ffffff;
-      transition: transform 0.3s ease;
+      margin: 0 auto;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .form-group label {
@@ -35,15 +40,20 @@
       font-weight: bold;
       color: #333;
       margin-bottom: 5px;
+      text-align: left;
     }
 
     .form-group input, .form-group textarea {
-      padding: 15px;
+      padding: 10px;
       font-size: 16px;
       border: 2px solid #ccc;
-      border-radius: 8px;
+      border-radius: 10px;
       outline: none;
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      width: 100%;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) inset;
+      transform: scale(1);
     }
 
     .form-group input:focus, .form-group textarea:focus {
@@ -58,43 +68,71 @@
     .submit-btn {
       display: block;
       width: 100%;
-      margin-top: 20px;
+      margin-top: 30px;
       padding: 18px;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
       text-decoration: none;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       background-color: #007bff;
       color: #fff;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: translateY(0);
     }
 
     .submit-btn:hover {
       background-color: #0056b3;
       transform: translateY(-2px);
     }
+
+    @media screen and (max-width: 600px) {
+      .form-wrapper {
+        padding: 20px;
+      }
+
+      .form-group label {
+        font-size: 16px;
+      }
+
+      .form-container {
+        max-width: 100%;
+      }
+
+      .form-group input, .form-group textarea {
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      .submit-btn {
+        padding: 16px;
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <form>
-      <div class="form-group">
-        <label for="name">Ім'я</label>
-        <input type="text" id="name" name="name" required placeholder="Володимир">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required placeholder="example@gmail.com">
-      </div>
-      <div class="form-group">
-        <label for="message">Текст</label>
-        <textarea id="message" name="message" rows="4" required placeholder="Текст"></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Надіслати</button>
-    </form>
+  <div class="form-wrapper">
+    <div class="form-container">
+      <form>
+        <div class="form-group" style="align-items: flex-start;">
+          <label for="name" style="margin-left: 0;">Ім'я</label>
+          <input type="text" id="name" name="name" required placeholder="Володимир">
+        </div>
+        <div class="form-group" style="align-items: flex-start;">
+          <label for="email" style="margin-left: 0;">Email</label>
+          <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+        </div>
+        <div class="form-group" style="align-items: flex-start;">
+          <label for="message" style="margin-left: 0;">Текст</label>
+          <textarea id="message" name="message" rows="4" required placeholder="Текст"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Надіслати</button>
+      </form>
+    </div>
   </div>
 </body>
 </html>
